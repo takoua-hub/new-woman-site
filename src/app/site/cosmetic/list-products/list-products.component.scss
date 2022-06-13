@@ -1,0 +1,47 @@
+
+.titre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lifestyle {
+  padding: 20px auto;
+  margin: 40px 0;
+}
+.lifestyle .contenu{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.lifestyle .contenu .box{
+  width: 300px;
+  margin: 20px;
+  border: 20px solid #fff;
+  box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.8);
+}
+.lifestyle .contenu .imbox{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.lifestyle .contenu .box .imbox img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+}
+.lifestyle .contenu .box .text {
+  text-align: center;
+  font-weight: 300px;
+  color: #111;
+}
+
+.lifestyle .contenu .box .text h3 {
+  font-weight: 400;
+}
+

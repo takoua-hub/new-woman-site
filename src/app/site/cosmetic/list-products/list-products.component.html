@@ -1,0 +1,22 @@
+
+<section class="lifestyle" id="lifestyle">
+      <div class="titre">
+          <h2 class="titre-texte"><span>Cosmetic</span>Products</h2>
+      </div>
+      <div class="contenu" >
+
+          <div class="box" *ngFor="let product of products">
+              <div class="imbox">
+                  <img src="{{product.image_link}}">
+              </div>
+              <div class="text">
+                  <h3>{{product.name}}</h3>
+              </div>
+              <a routerLink="/product//{{product.name}}">
+                description
+              </a>
+          </div>
+
+      </div>
+
+  </section>

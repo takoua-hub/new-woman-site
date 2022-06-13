@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div *ngIf="url=='/' || url=='/home'">
+  <app-home></app-home>
+  <app-about></app-about>
+  <app-news></app-news>
+  <app-lifestyle></app-lifestyle>
+  <app-contact></app-contact>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

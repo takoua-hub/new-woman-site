@@ -1,0 +1,25 @@
+  <div class="section">
+    <h3>Cosmetic Selection</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let categorie of cosCategories" class="col-4">
+                <div class="banner">
+                    <div class="banner-bg" style="background-image: url('../../../assets/images/banner/{{categorie.img}}');"></div>
+                    <div class="banner-overlay"></div>
+                    <div class="banner-text">
+                        <h3>{{categorie.nomc}}</h3>
+                        <a routerLink="/cosmetic/{{categorie.nomc}}" class="btn">
+                            view list
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,458 @@
+
+/*****************************************
+.icon-bar {
+  width: 90px;
+  background-color: #555;
+  position: fixed;
+  top: 20%;
+}
+.icon-bar a {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+.active {
+  background-color: #04AA6D;
+}
+/***********************************/
+.banniere {
+  position: relative;
+  width: 100%;
+  min-width: 350px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image:
+  linear-gradient(
+  rgba(239, 240, 233, 0.027),
+  rgba(230, 81, 223, 0.137)),
+  url("../../../assets/images/wallpaper.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  z-index: 1;
+}
+.banniere .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 150px;
+  max-width: 70%;
+  text-align: center;
+  display: inline-block;
+}
+.banniere .container h2 {
+  font-style: italic;
+  color: var(--second--color);
+  font-size: 3.2rem;
+  text-transform: capitalize;
+
+  --glow-color: hsl(248, 16%, 39%);
+
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: rgba(0, 0, 0, 0);
+  mix-blend-mode: plus-lighter;
+
+  -webkit-text-stroke: 0.012em rgba(241, 240, 255, 0.384);
+  filter: drop-shadow(0px 0px 5px var(--glow-color))
+    drop-shadow(0px 0px 10px var(--second--color));
+}
+.banniere .container p {
+  color: #e1d9e2;
+  font-size: 1.2em;
+  margin: 40px auto;
+  line-height: 1.6;
+}
+.btn1 {
+  width: 140px;
+  font-size: small;
+  background: #12dde4;
+  padding: 7px 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-left: 10px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+}
+.btn2 {
+  width:140px;
+  font-size: small;
+  background: var(--third--color);
+  padding: 7px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-left: 10px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+}
+.btn1:hover {
+  /*  letter-spacing: 4px; */
+  border-color: white;
+}
+.btn2:hover {
+  border-color: white;
+}
+@media (max-width: 767px) {
+  .btn {
+   display: block;
+   margin: 10px auto;
+   width: 110px;
+   text-align: center;
+  }
+  .banniere .container h2 {
+    font-size: 2.2rem;
+  }
+  .banniere .container p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+}
+
+/************************Bubbles*************************/
+.bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 15rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.75;
+  overflow: visible;
+}
+.bubbles {
+  width: 100%;
+  height: auto;
+}
+.bubbles circle {
+  stroke: white;
+  fill: none;
+}
+
+.bubbles > g > g:nth-of-type(3n) circle {
+  stroke: #87f5fb;
+}
+
+.bubbles > g > g:nth-of-type(4n) circle {
+  stroke: #8be8cb;
+}
+
+.bubbles-large {
+  overflow: visible;
+}
+
+.bubbles-large > g {
+  -webkit-transform: translateY(2048px);
+          transform: translateY(2048px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.bubbles-large g:nth-of-type(1) {
+  -webkit-animation: up 6.5s infinite;
+          animation: up 6.5s infinite;
+}
+
+.bubbles-large g:nth-of-type(1) g {
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
+}
+
+.bubbles-large g:nth-of-type(1) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-large g:nth-of-type(2) {
+  -webkit-animation: up 5.25s 250ms infinite;
+          animation: up 5.25s 250ms infinite;
+}
+
+.bubbles-large g:nth-of-type(2) g {
+  -webkit-transform: translateX(450px);
+          transform: translateX(450px);
+}
+
+.bubbles-large g:nth-of-type(2) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-large g:nth-of-type(3) {
+  -webkit-animation: up 6s 750ms infinite;
+          animation: up 6s 750ms infinite;
+}
+
+.bubbles-large g:nth-of-type(3) g {
+  -webkit-transform: translateX(700px);
+          transform: translateX(700px);
+}
+
+.bubbles-large g:nth-of-type(3) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-large g:nth-of-type(4) {
+  -webkit-animation: up 5.5s 1.5s infinite;
+          animation: up 5.5s 1.5s infinite;
+}
+
+.bubbles-large g:nth-of-type(4) g {
+  -webkit-transform: translateX(500px);
+          transform: translateX(500px);
+}
+
+.bubbles-large g:nth-of-type(4) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-large g:nth-of-type(5) {
+  -webkit-animation: up 6.5s 4s infinite;
+          animation: up 6.5s 4s infinite;
+}
+
+.bubbles-large g:nth-of-type(5) g {
+  -webkit-transform: translateX(675px);
+          transform: translateX(675px);
+}
+
+.bubbles-large g:nth-of-type(5) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-small {
+  overflow: visible;
+}
+
+.bubbles-small > g {
+  -webkit-transform: translateY(2048px);
+          transform: translateY(2048px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.bubbles-small g circle {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.bubbles-small g:nth-of-type(1) {
+  -webkit-animation: up 5.25s infinite;
+          animation: up 5.25s infinite;
+}
+
+.bubbles-small g:nth-of-type(1) g {
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
+}
+
+.bubbles-small g:nth-of-type(1) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(2) {
+  -webkit-animation: up 5.75s infinite;
+          animation: up 5.75s infinite;
+}
+
+.bubbles-small g:nth-of-type(2) g {
+  -webkit-transform: translateX(750px);
+          transform: translateX(750px);
+}
+
+.bubbles-small g:nth-of-type(2) circle {
+  -webkit-animation: wobble 3s infinite ease-in-out;
+          animation: wobble 3s infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(3) {
+  -webkit-animation: up 5.25s 250ms infinite;
+          animation: up 5.25s 250ms infinite;
+}
+
+.bubbles-small g:nth-of-type(3) g {
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
+}
+
+.bubbles-small g:nth-of-type(3) circle {
+  -webkit-animation: wobble 3s 250ms infinite ease-in-out;
+          animation: wobble 3s 250ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(4) {
+  -webkit-animation: up 5.75s 325ms infinite;
+          animation: up 5.75s 325ms infinite;
+}
+
+.bubbles-small g:nth-of-type(4) g {
+  -webkit-transform: translateX(180px);
+          transform: translateX(180px);
+}
+
+.bubbles-small g:nth-of-type(4) circle {
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(5) {
+  -webkit-animation: up 6s 125ms infinite;
+          animation: up 6s 125ms infinite;
+}
+
+.bubbles-small g:nth-of-type(5) g {
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
+}
+
+.bubbles-small g:nth-of-type(5) circle {
+  -webkit-animation: wobble 3s 250ms infinite ease-in-out;
+          animation: wobble 3s 250ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(6) {
+  -webkit-animation: up 5.13s 250ms infinite;
+          animation: up 5.13s 250ms infinite;
+}
+
+.bubbles-small g:nth-of-type(6) g {
+  -webkit-transform: translateX(650px);
+          transform: translateX(650px);
+}
+
+.bubbles-small g:nth-of-type(6) circle {
+  -webkit-animation: wobble 3s 125ms infinite ease-in-out;
+          animation: wobble 3s 125ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(7) {
+  -webkit-animation: up 6.25s 350ms infinite;
+          animation: up 6.25s 350ms infinite;
+}
+
+.bubbles-small g:nth-of-type(7) g {
+  -webkit-transform: translateX(480px);
+          transform: translateX(480px);
+}
+
+.bubbles-small g:nth-of-type(7) circle {
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(8) {
+  -webkit-animation: up 7s 200ms infinite;
+          animation: up 7s 200ms infinite;
+}
+
+.bubbles-small g:nth-of-type(8) g {
+  -webkit-transform: translateX(330px);
+          transform: translateX(330px);
+}
+
+.bubbles-small g:nth-of-type(8) circle {
+  -webkit-animation: wobble 3s 325ms infinite ease-in-out;
+          animation: wobble 3s 325ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(9) {
+  -webkit-animation: up 6.25s 233ms infinite;
+          animation: up 6.25s 233ms infinite;
+}
+
+.bubbles-small g:nth-of-type(9) g {
+  -webkit-transform: translateX(230px);
+          transform: translateX(230px);
+}
+
+.bubbles-small g:nth-of-type(9) circle {
+  -webkit-animation: wobble 3s 275ms infinite ease-in-out;
+          animation: wobble 3s 275ms infinite ease-in-out;
+}
+
+.bubbles-small g:nth-of-type(10) {
+  -webkit-animation: up 6s 900ms infinite;
+          animation: up 6s 900ms infinite;
+}
+
+.bubbles-small g:nth-of-type(10) g {
+  -webkit-transform: translateX(730px);
+          transform: translateX(730px);
+}
+
+.bubbles-small g:nth-of-type(10) circle {
+  -webkit-animation: wobble 2s 905ms infinite ease-in-out;
+          animation: wobble 2s 905ms infinite ease-in-out;
+}
+
+@-webkit-keyframes wobble {
+  33% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  66% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+@keyframes wobble {
+  33% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  66% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+@-webkit-keyframes up {
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-1024px);
+            transform: translateY(-1024px);
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-1024px);
+            transform: translateY(-1024px);
+  }
+}

@@ -1,0 +1,20 @@
+<div class="articles">
+  <h2><span>YOU </span>SHOULD KNOW</h2>
+  <div class="container">
+
+          <div *ngFor="let article of articles">
+            <div class="box">
+              <img src="{{article.media}}" alt="" />
+              <div class="content">
+                <h3>{{article.title.length > 50 ? article.title.substring(0,50)+'...' : article.title}}</h3>
+                <p>{{article.summary.length > 100 ? article.summary.substring(0,100)+'.....' :article.summary}}</p>
+              </div>
+              <div class="info">
+                <a href="">Read More</a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </div>
+            </div>
+          </div>
+</div>
+
+

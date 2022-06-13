@@ -1,0 +1,133 @@
+.titre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lifestyle {
+  padding: 20px auto;
+  margin: 30px 15px;
+}
+.lifestyle .contenu{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 30px 20px 30px;
+}
+.contenu .sport-activities p{
+  color:  var(--text-color);
+  line-height: 1.6;
+  font-size: 17px;
+}
+.images {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.lifestyle .contenu .box{
+  width: 300px;
+  margin: 20px ;
+  border: 20px solid #fff;
+  box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.8);
+}
+.lifestyle .contenu .imbox{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.lifestyle .contenu .box .imbox img {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 250px;
+}
+.lifestyle .contenu .box .imbox:hover img {
+  filter: grayscale(100%);
+  animation: rotate-slowly 0.7s;
+}
+.lifestyle .contenu .box .text {
+  text-align: center;
+  font-weight: 300px;
+  color: rgba(17, 17, 17, 0.712);
+}
+.lifestyle .titre {
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  a{
+    color: var(--main-color);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+.lifestyle .titre .titre-texte span {
+  color: var(--main-color);
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+.lifestyle .titre .titre-texte {
+  margin-bottom: 20px;
+  color: var(--third--color);
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.lifestyle .titre p{
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-weight: 500;
+  padding-left: 25px;
+}
+@media (max-width: 767px) {
+  .images {
+    flex-direction: column;
+  }
+  .lifestyle .contenu .box{
+    width: 250px;
+    margin: 20px ;
+    border: 20px solid #fff;
+    box-shadow: 2px 1.5px 3.5px rgba(0, 0, 0, 0.8);
+  }
+  .lifestyle .contenu .box .imbox {
+    width: 100%;
+    height: 150px;
+  }
+  .lifestyle .contenu .box .imbox img {
+    width: 100%;
+    height: 100%;
+  }
+  .lifestyle .contenu {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 110%;
+    height: 110%;
+  }
+}
+@keyframes rotate-slowly {
+  0%,
+  40% {
+    transform: rotate(2deg) scale(1.1);
+
+  }
+  70% {
+    transform: rotate(-2deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(2deg) scale(1.1);
+  }
+
+}
