@@ -23,7 +23,6 @@ header{
   justify-content: space-between;
   align-items: center;
   display: flex;
-  gap: 20px;
   &.is-active {
     flex-direction: column;
     display: block;
@@ -33,12 +32,7 @@ header{
     height: 100vh;
     background-color: rgb(241, 189, 211);
     width: 40%;
-    z-index: 10;
-
-    li a {
-      padding: 20px;
-      display: block;
-    }
+    z-index: 10000;
 	}
 }
 .navbar li {
@@ -49,14 +43,31 @@ header{
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.4s;
   font-size: 1rem;
   letter-spacing: 1px;
-  padding: 0px 10px;
+  padding: 8px 10px;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
 }
-header .navbar li a:hover {
-  color: #e621c2;
-  border-bottom: 2px solid #e621c2;
+
+.navbar li a.activelink span:first-child{
+ width: 100%;
+}
+.navbar li a span:first-child{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--third--color);
+  z-index: 1;
+}
+.navbar li a span:last-child{
+  position: relative;
+  z-index: 20000;
 }
 .btn-register {
   background-color:var(--second--color);
@@ -168,3 +179,4 @@ header .nav-icons {
     height: 60px;
   }
 }
+

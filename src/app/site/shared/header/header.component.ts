@@ -20,14 +20,15 @@ export class HeaderComponent implements OnInit {
       const burgerMenu = document.getElementById("burger");
       const bgOverlay = document.querySelector(".overlay");
 
-
+     /****************dark mode*****************/
       darkMode!.addEventListener('change',() => {
         document.body.classList.toggle('dark');
         header!.classList.toggle('headerdark');
       });
 
+      /*************Responsive menu************/
       if (burgerMenu && navbarMenu && bgOverlay) {
-        
+
         burgerMenu.addEventListener('click', () => {
           navbarMenu.classList.toggle('is-active')
           bgOverlay.classList.toggle('is-active')

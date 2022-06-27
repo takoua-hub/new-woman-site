@@ -34,8 +34,8 @@ export class NewsComponent implements OnInit {
               this.articles=res.data.articles;
               console.log(this.articles);
 
-              if (this.articles.length>8) {
-                this.articles= this.articles.splice(0,8);
+              if (this.articles.length>6) {
+                this.articles= this.articles.splice(0,6);
               }
            })
            .catch((error: any)=>{
