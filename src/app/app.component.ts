@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router,NavigationStart, Event as NavigationEvent } from '@angular/router';
 import * as $ from 'jquery';
-import { easing } from 'jquery';
 
 
 @Component({
@@ -27,42 +26,30 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-
     window.addEventListener('scroll', function(){
       const header =document.querySelector('header');
       header!.classList.toggle("sticky", window.scrollY > (window.innerHeight-90));
       header!.classList.toggle("sticky2", window.scrollY >0 && window.scrollY <(window.innerHeight-90));
     });
-
-    var flag=true;
-
     $(document).ready(function(){
     // Syncronize active menu when scrolling //
-      $(window).scroll(function () {
+      $(window).on('scroll',function () {
+        var scrollTop = $(window).scrollTop();
         $('.block').each( function () {
-          var ScrollTop = $(window).scrollTop();
+          var link = $('.navbar li a[data-scroll="'+$(this).attr('id')+'"] span:first-child');
           var offsetTop = $(this).offset()?.top;
-          if (typeof offsetTop === "undefined") {
-            throw new Error(`Expected element`);
+          var blockHeight = $(this).height();
+          if (typeof blockHeight === "undefined") {
+            throw new Error(`Expected element with id="pdfTable"`);
           }
-          if (ScrollTop) {
-            if (ScrollTop > offsetTop) {
-              /*  $('.navbar a').removeClass('activelink');
-               $('.navbar li a[data-scroll="'+$(this).attr('id') +'"]').addClass('activelink'); */
-               console.log(ScrollTop+ '****' + offsetTop);
-              if (flag) {
-                $('.navbar li a[data-scroll="'+$(this).attr('id') +'"] span:first-child').animate({
-                  width: '100%'
-                 }, {
-                  easing: 'swing',
-                  duration:500,
-                  complete: function () {
-                   $(this).animate({
-                    width: 0
-                   },100)
-                  }
-                 });
-                flag = false;
+          if (offsetTop==0 || offsetTop) {
+            var offsetBottom = offsetTop + blockHeight;
+            if (scrollTop && offsetBottom) {
+              if (scrollTop > offsetTop && scrollTop < offsetBottom) {
+                $('.navbar li a span:first-child').removeClass('animate-link');
+                if (!(link.hasClass('animate-link'))) {
+                  link.addClass('animate-link')
+                }
               }
             }
           }
@@ -81,8 +68,6 @@ export class AppComponent implements OnInit, OnDestroy{
   });
 
   }
-
-
   ngOnDestroy() {
     this.event$.unsubscribe();
   }

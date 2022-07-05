@@ -1,3 +1,6 @@
+header * {
+  border: 1px solid red;
+}
 header{
   position: fixed;
   top: 0;
@@ -45,14 +48,13 @@ header{
   cursor: pointer;
   font-size: 1rem;
   letter-spacing: 1px;
-  padding: 8px 10px;
+  padding: 11px 10px;
   z-index: 2;
   position: relative;
-  width: 100px;
+  min-width: 120px;
   display: inline-block;
   text-align: center;
 }
-
 .navbar li a.activelink span:first-child{
  width: 100%;
 }
@@ -62,12 +64,14 @@ header{
   top: 0;
   width: 0%;
   height: 100%;
-  background-color: var(--third--color);
+  background-color: #2a0723;
+  border-radius: 2px;
   z-index: 1;
 }
 .navbar li a span:last-child{
   position: relative;
-  z-index: 20000;
+  text-align: center;
+  z-index: 2;
 }
 .btn-register {
   background-color:var(--second--color);
@@ -180,3 +184,18 @@ header .nav-icons {
   }
 }
 
+.animate-link{
+  animation: animlink 0.5s ease forwards;
+  animation-iteration-count: 1;
+}
+@keyframes animlink {
+  0%{
+    width: 0%;
+  }
+  50%{
+    width: 50%;
+  }
+  100%{
+    width: 100%;
+  }
+}
